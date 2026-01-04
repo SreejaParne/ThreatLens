@@ -1,0 +1,132 @@
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 10.0.0.5
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 10.0.0.5
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 10.0.0.5
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 10.0.0.5
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 10.0.0.5
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 10.0.0.5
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 10.0.0.5
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 10.0.0.5
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 192.168.1.10
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 45.33.32.156
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+
+ALERT: Brute-force detected from 10.0.0.5
+MITRE: T1110 - Brute Force
+SEVERITY: HIGH
+

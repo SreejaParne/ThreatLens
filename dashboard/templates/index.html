@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ThreatLens</title>
+<meta http-equiv="refresh" content="30">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #020617;
+    color: #e5e7eb;
+}
+
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    background-color: #020617;
+    padding-top: 30px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.6);
+}
+
+.sidebar a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #e5e7eb;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    background-color: #1e293b;
+}
+
+.main {
+    margin-left: 220px;
+    padding: 30px;
+}
+
+.header {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.8);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+/* 🔵 Total Logs */
+.card.logs {
+    background-color: #0c4a6e;
+}
+.card.logs h3 {
+    color: #bae6fd;
+}
+
+/* 🟣 Security Events */
+.card.events {
+    background-color: #581c87;
+}
+.card.events h3 {
+    color: #e9d5ff;
+}
+
+/* 🔴 Active Alerts */
+.card.active {
+    background-color: #7f1d1d;
+}
+.card.active h3 {
+    color: #fecaca;
+}
+
+/* 🟠 Acknowledged Alerts */
+.card.ack {
+    background-color: #78350f;
+}
+.card.ack h3 {
+    color: #fed7aa;
+}
+
+/* 🟢 Resolved Alerts */
+.card.resolved {
+    background-color: #14532d;
+}
+.card.resolved h3 {
+    color: #bbf7d0;
+}
+
+.footer {
+    margin-top: 40px;
+    color: #64748b;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <a href="/">🏠 Dashboard</a>
+    <a href="/logs">📜 Logs</a>
+    <a href="/alerts">🚨 Alerts</a>
+    <a href="/events">🕒 Events</a>
+    <a href="/stats">📊 Statistics</a>
+    <a href="/reports">📁 Reports</a>
+</div>
+
+<div class="main">
+
+    <div class="header">🔎 ThreatLens — Security Dashboard</div>
+
+    <div class="cards">
+
+        <div class="card logs">
+            <h3>📜 Total Logs</h3>
+            <p>{{ log_count }}</p>
+        </div>
+
+        <div class="card active">
+            <h3>🔴 Active Alerts</h3>
+            <p>{{ active_alerts }}</p>
+        </div>
+
+        <div class="card ack">
+            <h3>🟠 Acknowledged</h3>
+            <p>{{ ack_alerts }}</p>
+        </div>
+
+        <div class="card resolved">
+            <h3>🟢 Resolved</h3>
+            <p>{{ resolved_alerts }}</p>
+        </div>
+
+        <div class="card events">
+            <h3>🕒 Security Events</h3>
+            <p>{{ event_count }}</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Live Security Monitoring • Focus on Threats before they strike • SIEM-Style Alert Lifecycle • Auto-refresh every 30 seconds
+    </div>
+
+</div>
+
+</body>
+</html>

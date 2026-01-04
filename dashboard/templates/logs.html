@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Live Logs</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #020617;
+    color: #e5e7eb;
+}
+
+.container {
+    padding: 24px;
+}
+
+.log {
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+/* Source borders */
+.SSH { border-left: 5px solid #38bdf8; }
+.HTTP { border-left: 5px solid #22c55e; }
+.SYSTEM { border-left: 5px solid #a855f7; }
+
+/* Status colors */
+.log-success {
+    background: rgba(0, 255, 0, 0.15);
+    color: #9dffb0;
+}
+
+.log-failed {
+    background: rgba(255, 0, 0, 0.18);
+    color: #ffb3b3;
+}
+
+.log-default {
+    background: rgba(150, 90, 255, 0.15);
+    color: #d6c8ff;
+}
+
+.back {
+    margin-top: 40px;
+}
+
+.back a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+
+<script>
+/* Refresh logs every 30 seconds */
+setInterval(() => {
+    location.reload();
+}, 30000);
+
+/* Clear logs from screen every 60 seconds */
+setTimeout(() => {
+    const container = document.getElementById("log-container");
+    if (container) {
+        container.innerHTML = "<p>Waiting for new logs...</p>";
+    }
+}, 60000);
+</script>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>📜 Live Logs</h2>
+
+    <div id="log-container">
+        {% for log in logs %}
+            <div class="log {{ log.source }}
+                {% if 'SUCCESS' in log.message %}
+                    log-success
+                {% elif 'FAILED' in log.message %}
+                    log-failed
+                {% else %}
+                    log-default
+                {% endif %}
+            ">
+                {{ log.timestamp }} — {{ log.message }}
+            </div>
+        {% else %}
+            <p>No logs available.</p>
+        {% endfor %}
+    </div>
+
+    <div class="back">
+        <a href="/">← Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>

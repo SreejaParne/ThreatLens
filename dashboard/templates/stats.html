@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stats | ThreatLens</title>
+
+<!-- Auto refresh every 5 seconds -->
+<meta http-equiv="refresh" content="5">
+
+<style>
+body {
+    background-color: #0f172a;
+    color: #e5e7eb;
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+h2 {
+    color: #22c55e;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #020617;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.charts {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+img {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h2>📊 Attack Statistics (Last 15 Seconds)</h2>
+
+<div class="cards">
+    <div class="card">
+        <h3>Live Window</h3>
+        <p>15 Seconds</p>
+    </div>
+
+    <div class="card">
+        <h3>Data Source</h3>
+        <p>System Logs</p>
+    </div>
+
+    <div class="card">
+        <h3>Mode</h3>
+        <p>Real-Time</p>
+    </div>
+</div>
+
+<div class="charts">
+    <img src="/static/attack_graph.png" width="400" alt="Attack Bar Graph">
+    <img src="/static/attack_pie.png" width="350" alt="Attack Pie Chart">
+</div>
+
+<br><br>
+<a href="/">← Back to Dashboard</a>
+
+</body>
+</html>
