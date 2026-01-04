@@ -48,5 +48,5 @@ them using a Flask dashboard.
 This project is for educational and personal use. Feel free to modify and improve.
 
 ## Contact
-GitHub: https://github.com/SreejaParne
-LinkedIn: https://www.linkedin.com/in/sreejaparne/
+- GitHub: https://github.com/SreejaParne
+- LinkedIn: https://www.linkedin.com/in/sreejaparne/
