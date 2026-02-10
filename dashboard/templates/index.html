@@ -108,6 +108,14 @@ body {
     color: #bbf7d0;
 }
 
+/* 🔥 Blocked IPs */
+.card.blocked {
+    background-color: #3f1d1d;
+}
+.card.blocked h3 {
+    color: #fca5a5;
+}
+
 .footer {
     margin-top: 40px;
     color: #64748b;
@@ -123,8 +131,10 @@ body {
     <a href="/logs">📜 Logs</a>
     <a href="/alerts">🚨 Alerts</a>
     <a href="/events">🕒 Events</a>
+    <a href="/blocked">⛔ Blocked IPs</a>
     <a href="/stats">📊 Statistics</a>
     <a href="/reports">📁 Reports</a>
+
 </div>
 
 <div class="main">
@@ -156,6 +166,12 @@ body {
         <div class="card events">
             <h3>🕒 Security Events</h3>
             <p>{{ event_count }}</p>
+        </div>
+
+        <!-- 🔥 NEW BLOCKED IPS CARD -->
+        <div class="card blocked">
+            <h3>⛔ Blocked IPs</h3>
+            <p>{{ blocked_count }}</p>
         </div>
 
     </div>

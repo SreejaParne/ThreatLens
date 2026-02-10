@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blocked IPs|ThreatLens</title>
+
+<style>
+body{
+    background:#020617;
+    color:white;
+    font-family:Arial;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+th,td{
+    padding:12px;
+    border-bottom:1px solid #334155;
+}
+button{
+    background:#dc2626;
+    border:none;
+    color:white;
+    padding:6px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+.back a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h2>⛔ Blocked IP Addresses</h2>
+
+<table>
+<tr>
+<th>Time</th>
+<th>Status</th>
+<th>IP Address</th>
+<th>Action</th>
+</tr>
+
+{% for row in blocked %}
+  <tr>
+    <!-- Time -->
+    <td>{{ row.time }}</td>
+
+    <!-- Status -->
+    <td>
+      <span class="badge bg-danger">BLOCKED</span>
+    </td>
+
+    <!-- IP -->
+    <td>{{ row.ip }}</td>
+
+    <!-- Action -->
+    <td>
+      <a href="/unblock/{{ row.ip }}" class="btn btn-sm btn-danger">
+        Unblock
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+    <div class="back">
+        <a href="/">← Back to Dashboard</a>
+    </div>
+
+</body>
+</html>
