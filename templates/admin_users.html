@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Users</title>
+    <style>
+        body {
+            background: #020617;
+            color: white;
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e293b;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #334155;
+            text-align: center;
+        }
+
+        th {
+            background: #0f172a;
+            color: #38bdf8;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .delete {
+            background: #ef4444;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 15px;
+            background: #22c55e;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<a href="/" class="back">← Back to Dashboard</a>
+
+<h2>All Registered Users</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Organisation</th>
+        <th>Designation</th>
+        <th>Role</th>
+        <th>Username</th>
+        <th>Action</th>
+    </tr>
+
+    {% for user in users %}
+    <tr>
+        <td>
+            <img src="{{ url_for('static', filename='profile_pics/' + user.image) }}"
+                 width="50" height="50">
+        </td>
+        <td>{{ user.full_name }}</td>
+        <td>{{ user.organisation }}</td>
+        <td>{{ user.designation }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.username }}</td>
+        <td>
+            <a href="/delete_user/{{ user.username }}" class="btn delete">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

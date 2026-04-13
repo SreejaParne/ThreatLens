@@ -5,31 +5,49 @@ import os
 LOG_FILE = "logs/system.log"
 os.makedirs("logs", exist_ok=True)
 
-# 🔥 Clear logs at program start
 open(LOG_FILE, "w").close()
 
-ips = ["45.33.32.156", "10.0.0.5", "192.168.1.10"]
-statuses = ["SUCCESS", "FAILED", "FAILED"]  # more failures = realistic
-
-print("[*] Log Collector started (60-second rolling window)")
+print("[*] Advanced Log Collector started (60-second rolling window)")
 
 start_time = time.time()
 
+events = [
+    "SUCCESS login attempt",
+    "FAILED login attempt",
+    "ddos traffic spike detected",
+    "credential stuffing attempt detected",
+    "phishing email reported",
+    "ransomware encryption activity detected",
+    "privilege escalation attempt detected",
+    "lateral movement detected",
+    "data exfiltration attempt detected",
+    "malicious command execution detected",
+    "file upload attack detected"
+]
+
+def generate_random_ip():
+    return f"{random.randint(1, 255)}.{random.randint(0, 255)}.{random.randint(0, 255)}.{random.randint(1, 254)}"
+
 while True:
-    # ⏱ Rotate logs every 60 seconds
+
     if time.time() - start_time >= 60:
         open(LOG_FILE, "w").close()
         start_time = time.time()
         print("[*] Log window cleared (60s rotation)")
 
-    ip = random.choice(ips)
-    status = random.choice(statuses)
     timestamp = time.time()
+    ip = generate_random_ip()
 
-    log = f"{timestamp}|{status} login attempt ip={ip}\n"
+    event = random.choices(
+        events,
+        weights=[3, 5, 2, 2, 1, 1, 1, 1, 1, 1, 1],
+        k=1
+    )[0]
+
+    log_line = f"{timestamp}|{event} ip={ip}\n"
 
     with open(LOG_FILE, "a") as f:
-        f.write(log)
+        f.write(log_line)
 
-    print(log.strip())
+    print(log_line.strip())
     time.sleep(2)

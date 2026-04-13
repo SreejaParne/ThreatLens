@@ -1,0 +1,10 @@
+[
+    {
+        "full_name": "Sree",
+        "organisation": "MRU",
+        "designation": "Stu",
+        "role": "analyst",
+        "username": "sreeja",
+        "password": "scrypt:32768:8:1$pKZnp2JLYsmwM99l$19baebe80bdd61561ffdb595185252b27596c1923c6985218970293c0775f8d6d09eb21b58fabd77b7a349b614d4183d822dfa84d03c6de9d92aa5425fe30e17"
+    }
+]

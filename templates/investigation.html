@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LiveLog Fusion - Investigation Mode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #38bdf8;
+        }
+
+        .container {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+            margin: 5px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #38bdf8;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #0ea5e9;
+        }
+
+        .results {
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            background-color: #0f172a;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .log-entry {
+            padding: 6px;
+            border-bottom: 1px solid #334155;
+            font-size: 14px;
+        }
+
+        .failed {
+            color: #f87171;
+        }
+
+        .info {
+            color: #34d399;
+        }
+    </style>
+</head>
+<body>
+
+<h2>🔎 LiveLog Fusion Engine - Investigation Mode</h2>
+
+<div class="container">
+
+    <form method="POST">
+        <label>Start Time:</label><br>
+        <input type="text" name="start_time" placeholder="YYYY-MM-DD HH:MM:SS" required>
+
+        <br><br>
+
+        <label>End Time:</label><br>
+        <input type="text" name="end_time" placeholder="YYYY-MM-DD HH:MM:SS" required>
+
+        <br><br>
+
+        <button type="submit">Replay Logs</button>
+    </form>
+
+    <div class="results">
+        {% if results %}
+            {% for log in results %}
+                <div class="log-entry {% if log.event_type == 'FAILED' %}failed{% else %}info{% endif %}">
+                    {{ log.timestamp }} | {{ log.event_type }} | {{ log.raw }}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No logs found for selected time range.</p>
+        {% endif %}
+    </div>
+
+</div>
+
+</body>
+</html>

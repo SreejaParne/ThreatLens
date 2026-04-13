@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blocked IPs | ThreatLens</title>
+
+<style>
+body{
+    margin:0;
+    padding:30px;
+    background:#020617;
+    color:#e5e7eb;
+    font-family:Arial, sans-serif;
+}
+
+h2{
+    margin-bottom:25px;
+}
+
+.table-container{
+    background:#0f172a;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 12px rgba(0,0,0,0.8);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    text-align:left;
+    padding:12px;
+    background:#1e293b;
+    font-size:14px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #334155;
+    font-size:14px;
+}
+
+.status{
+    color:#ef4444;
+    font-weight:bold;
+}
+
+button{
+    background:#dc2626;
+    border:none;
+    color:white;
+    padding:6px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+button:hover{
+    background:#b91c1c;
+}
+
+.empty{
+    text-align:center;
+    padding:20px;
+    color:#94a3b8;
+}
+
+.back{
+    margin-top:30px;
+}
+
+.back a{
+    color:#38bdf8;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h2>⛔ Blocked IP Addresses</h2>
+
+<div class="table-container">
+<table>
+<tr>
+<th>Time</th>
+<th>Status</th>
+<th>IP Address</th>
+<th>Action</th>
+</tr>
+
+{% if blocked %}
+  {% for row in blocked %}
+  <tr>
+    <td>{{ row.time }}</td>
+    <td class="status">BLOCKED</td>
+    <td>{{ row.ip }}</td>
+    <td>
+        <form method="POST" action="/unblock/{{ row.ip }}" style="margin:0;">
+            <button type="submit">Unblock</button>
+        </form>
+    </td>
+  </tr>
+  {% endfor %}
+{% else %}
+  <tr>
+    <td colspan="4" class="empty">
+      No blocked IPs found
+    </td>
+  </tr>
+{% endif %}
+</table>
+</div>
+
+<div class="back">
+    <a href="/">← Back to Dashboard</a>
+</div>
+
+</body>
+</html>

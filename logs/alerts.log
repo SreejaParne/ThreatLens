@@ -1,78 +1,31 @@
-2026-02-09 10:30:04 | MEDIUM | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:30:10 | MEDIUM | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:30:16 | MEDIUM | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:30:16 | MEDIUM | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:30:22 | HIGH | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:30:22 | HIGH | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:30:25 | MEDIUM | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:30:28 | HIGH | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:30:28 | MEDIUM | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:30:34 | MEDIUM | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:30:34 | HIGH | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:30:37 | HIGH | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:30:40 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:30:46 | MEDIUM | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:30:49 | MEDIUM | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:30:52 | LOW | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:30:52 | LOW | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:30:52 | LOW | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:30:52 | MEDIUM | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:30:58 | HIGH | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:01 | HIGH | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:02 | LOW | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:02 | MEDIUM | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:02 | LOW | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:07 | HIGH | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:07 | LOW | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:07 | MEDIUM | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:07 | MEDIUM | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:07 | MEDIUM | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:07 | HIGH | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:10 | HIGH | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:10 | HIGH | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:12 | MEDIUM | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:12 | HIGH | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:12 | MEDIUM | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:12 | HIGH | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:12 | HIGH | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:12 | MEDIUM | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:12 | MEDIUM | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:12 | HIGH | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:16 | CRITICAL | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:17 | HIGH | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:17 | HIGH | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:17 | HIGH | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:17 | HIGH | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:17 | HIGH | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:17 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:17 | HIGH | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:22 | HIGH | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:22 | HIGH | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:22 | CRITICAL | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:22 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:22 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:22 | CRITICAL | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:22 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:22 | CRITICAL | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:22 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:27 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:27 | CRITICAL | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:27 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:27 | CRITICAL | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:27 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:27 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:31 | HIGH | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:32 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:32 | CRITICAL | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:32 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:32 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:32 | CRITICAL | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:37 | CRITICAL | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:38 | CRITICAL | Brute Force detected | IP=192.168.1.10
-2026-02-09 10:31:38 | CRITICAL | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:38 | CRITICAL | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:38 | CRITICAL | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:43 | CRITICAL | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:43 | CRITICAL | Brute Force detected | IP=45.33.32.156
-2026-02-09 10:31:43 | CRITICAL | Brute Force detected | IP=10.0.0.5
-2026-02-09 10:31:43 | CRITICAL | Brute Force detected | IP=10.0.0.5
+2026-03-24 15:57:42|HIGH|ddos|ThreatScore=60|Action=TEMP_MONITOR|ip=26.39.157.78
+2026-03-24 15:57:44|CRITICAL|data_exfiltration|ThreatScore=25|Action=BLOCK_IP|ip=158.81.220.60
+2026-03-24 15:57:46|CRITICAL|data_exfiltration|ThreatScore=25|Action=BLOCK_IP|ip=192.127.151.217
+2026-03-24 15:57:56|HIGH|phishing|ThreatScore=21|Action=TEMP_MONITOR|ip=181.205.31.45
+2026-03-24 15:58:00|CRITICAL|data_exfiltration|ThreatScore=52|Action=BLOCK_IP|ip=49.42.38.247
+2026-03-24 15:58:10|HIGH|privilege_escalation|ThreatScore=53|Action=TEMP_MONITOR|ip=54.38.13.247
+2026-03-24 15:58:20|HIGH|privilege_escalation|ThreatScore=51|Action=TEMP_MONITOR|ip=234.108.136.100
+2026-03-24 15:58:34|HIGH|ddos|ThreatScore=26|Action=TEMP_MONITOR|ip=225.25.16.7
+2026-03-24 15:58:36|HIGH|ransomware|ThreatScore=59|Action=TEMP_MONITOR|ip=84.8.218.189
+2026-03-24 15:58:44|HIGH|phishing|ThreatScore=38|Action=TEMP_MONITOR|ip=26.182.65.198
+2026-03-24 15:58:54|CRITICAL|command_execution|ThreatScore=24|Action=BLOCK_IP|ip=78.135.14.69
+2026-03-24 15:58:58|HIGH|privilege_escalation|ThreatScore=36|Action=TEMP_MONITOR|ip=103.111.194.254
+2026-03-24 15:59:00|HIGH|phishing|ThreatScore=36|Action=TEMP_MONITOR|ip=125.163.206.251
+2026-03-24 15:59:04|HIGH|ddos|ThreatScore=50|Action=TEMP_MONITOR|ip=166.36.180.62
+2026-03-24 15:59:12|HIGH|ransomware|ThreatScore=20|Action=TEMP_MONITOR|ip=224.145.131.44
+2026-03-24 15:59:14|HIGH|ddos|ThreatScore=41|Action=TEMP_MONITOR|ip=124.219.36.238
+2026-03-24 15:59:16|CRITICAL|file_upload_attack|ThreatScore=53|Action=BLOCK_IP|ip=142.235.53.118
+2026-03-24 15:59:20|HIGH|lateral_movement|ThreatScore=54|Action=TEMP_MONITOR|ip=183.153.228.246
+2026-03-24 15:59:22|HIGH|ddos|ThreatScore=32|Action=TEMP_MONITOR|ip=163.231.53.231
+2026-03-24 15:59:28|HIGH|privilege_escalation|ThreatScore=33|Action=TEMP_MONITOR|ip=127.83.216.176
+2026-03-24 15:59:30|HIGH|ransomware|ThreatScore=49|Action=TEMP_MONITOR|ip=122.191.88.110
+2026-03-24 15:59:32|CRITICAL|command_execution|ThreatScore=58|Action=BLOCK_IP|ip=253.168.215.73
+2026-03-24 15:59:34|HIGH|privilege_escalation|ThreatScore=23|Action=TEMP_MONITOR|ip=215.91.83.119
+2026-03-24 15:59:36|CRITICAL|command_execution|ThreatScore=28|Action=BLOCK_IP|ip=184.154.31.210
+2026-03-24 15:59:38|HIGH|lateral_movement|ThreatScore=31|Action=TEMP_MONITOR|ip=214.85.230.249
+2026-03-24 15:59:44|CRITICAL|data_exfiltration|ThreatScore=24|Action=BLOCK_IP|ip=91.75.28.5
+2026-03-24 15:59:46|HIGH|ddos|ThreatScore=35|Action=TEMP_MONITOR|ip=174.54.41.23
+2026-03-24 15:59:48|CRITICAL|data_exfiltration|ThreatScore=51|Action=BLOCK_IP|ip=176.143.229.176
+2026-03-24 15:59:54|HIGH|ddos|ThreatScore=47|Action=TEMP_MONITOR|ip=28.111.108.197
+2026-03-24 16:00:02|HIGH|privilege_escalation|ThreatScore=50|Action=TEMP_MONITOR|ip=97.41.146.39
+2026-03-24 16:00:10|CRITICAL|command_execution|ThreatScore=20|Action=BLOCK_IP|ip=13.176.91.67

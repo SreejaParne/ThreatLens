@@ -2,86 +2,92 @@ import matplotlib
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
-import time
 import os
-from collections import defaultdict
 
+# ================= FILE PATHS =================
 LOG_FILE = "logs/system.log"
 ALERT_FILE = "logs/alerts.log"
-STATIC_DIR = "dashboard/static"
+EVENT_FILE = "logs/events.log"
+BLOCK_FILE = "logs/blocked_ips.txt"
+
+STATIC_DIR = "static"
 
 BAR_IMG = os.path.join(STATIC_DIR, "attack_graph.png")
 PIE_IMG = os.path.join(STATIC_DIR, "attack_pie.png")
 
-# Track failures per IP (time window)
-failed_attempts = defaultdict(list)
+os.makedirs(STATIC_DIR, exist_ok=True)
 
-def get_severity(ip):
-    now = time.time()
 
-    # Keep only last 60 seconds
-    failed_attempts[ip] = [t for t in failed_attempts[ip] if now - t <= 60]
-    count = len(failed_attempts[ip])
+# ================= COUNT FUNCTIONS =================
+def count_lines(filepath):
+    if os.path.exists(filepath):
+        with open(filepath, "r") as f:
+            return sum(1 for _ in f)
+    return 0
 
-    if count >= 10:
-        return "CRITICAL"
-    elif count >= 6:
-        return "HIGH"
-    elif count >= 3:
-        return "MEDIUM"
-    else:
-        return "LOW"
 
-def generate_attack_graph():
-    now = time.time()
-    window = 15  # seconds
-
+def count_login_status():
     failed = 0
     success = 0
 
     if not os.path.exists(LOG_FILE):
-        return
+        return failed, success
 
-    with open(LOG_FILE) as f:
+    with open(LOG_FILE, "r") as f:
         for line in f:
-            try:
-                ts, rest = line.strip().split("|", 1)
-                ts = float(ts)
+            if "FAILED" in line:
+                failed += 1
+            elif "SUCCESS" in line:
+                success += 1
 
-                if now - ts <= window:
-                    if "FAILED" in rest:
-                        failed += 1
+    return failed, success
 
-                        ip = rest.split("ip=")[-1]
-                        failed_attempts[ip].append(ts)
 
-                        severity = get_severity(ip)
+# ================= GENERATE GRAPHS =================
+def generate_attack_graph():
 
-                        alert = f"{time.strftime('%Y-%m-%d %H:%M:%S')} | {severity} | Brute Force detected | IP={ip}\n"
-                        with open(ALERT_FILE, "a") as af:
-                            af.write(alert)
+    alerts_count = count_lines(ALERT_FILE)
+    events_count = count_lines(EVENT_FILE)
+    blocked_count = count_lines(BLOCK_FILE)
+    failed_count, success_count = count_login_status()
 
-                    elif "SUCCESS" in rest:
-                        success += 1
-            except:
-                continue
+    labels = [
+        "Alerts",
+        "Events",
+        "Blocked IPs",
+        "FAILED",
+        "SUCCESS"
+    ]
 
-    # BAR GRAPH
+    values = [
+        alerts_count,
+        events_count,
+        blocked_count,
+        failed_count,
+        success_count
+    ]
+
+    # ---------- BAR GRAPH ----------
     plt.figure()
-    plt.bar(["FAILED", "SUCCESS"], [failed, success])
-    plt.title("Login Attempts (Last 15 Seconds)")
+    plt.bar(labels, values)
+    plt.title("Security System Statistics")
     plt.ylabel("Count")
+    plt.xticks(rotation=30)
     plt.savefig(BAR_IMG)
     plt.close()
 
-    # PIE GRAPH
+    # ---------- PIE GRAPH ----------
     plt.figure()
+
+    if sum(values) == 0:
+        values = [1] * len(values)
+
     plt.pie(
-        [failed, success],
-        labels=["FAILED", "SUCCESS"],
+        values,
+        labels=labels,
         autopct="%1.1f%%",
         startangle=90
     )
-    plt.title("Attack Distribution (15s Window)")
+    plt.title("System Log Distribution")
     plt.savefig(PIE_IMG)
     plt.close()

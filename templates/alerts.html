@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Security Alerts|ThreatLens </title>
+<title>Security Alerts | ThreatLens</title>
 
 <style>
 body {
@@ -27,11 +27,11 @@ h1 {
 }
 
 .panel {
-    background-color: #020617;
+    background-color: #0f172a;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 0 12px rgba(0,0,0,0.8);
-    max-height: 500px;
+    max-height: 600px;
     overflow-y: auto;
 }
 
@@ -48,6 +48,9 @@ h1 {
     font-family: monospace;
     background-color: #020617;
     border-left: 5px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .active { border-color: #ef4444; }
@@ -55,13 +58,14 @@ h1 {
 .resolved { border-color: #22c55e; }
 
 button {
-    margin-top: 8px;
+    margin-left: 10px;
     background-color: #1e293b;
     color: #e5e7eb;
     border: none;
     padding: 6px 10px;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 12px;
 }
 
 button:hover {
@@ -90,12 +94,11 @@ button:hover {
         <!-- 🔴 ACTIVE ALERTS -->
         <div class="panel">
             <h2 style="color:#ef4444;">🔴 Active Alerts</h2>
-
             {% if unacked_alerts %}
                 {% for alert in unacked_alerts %}
                     <div class="alert active">
-                        {{ alert }}
-                        <form method="POST" action="/ack">
+                        <span>{{ alert }}</span>
+                        <form method="POST" action="/ack" style="margin:0;">
                             <input type="hidden" name="alert" value="{{ alert }}">
                             <button type="submit">Acknowledge</button>
                         </form>
@@ -108,15 +111,15 @@ button:hover {
 
         <!-- 🟠 ACKNOWLEDGED ALERTS -->
         <div class="panel">
-            <h2 style="color:#f59e0b;">🟠 Acknowledged</h2>
-
+            <h2 style="color:#f59e0b;">🟠 Acknowledged Alerts</h2>
             {% if acked_alerts %}
                 {% for alert in acked_alerts %}
                     <div class="alert acked">
-                        ✔ {{ alert }}
-                        <form method="POST" action="/resolve">
+                        <span>{{ alert }}</span>
+                        <form method="POST" action="/resolve" style="margin:0;">
                             <input type="hidden" name="alert" value="{{ alert }}">
                             <button type="submit">Resolve</button>
+                        </form>
                     </div>
                 {% endfor %}
             {% else %}
@@ -124,9 +127,9 @@ button:hover {
             {% endif %}
         </div>
 
-        <!-- 🟢 RESOLVED ALERTS (future ready) -->
+        <!-- 🟢 RESOLVED ALERTS -->
         <div class="panel">
-            <h2 style="color:#22c55e;">🟢 Resolved</h2>
+            <h2 style="color:#22c55e;">🟢 Resolved Alerts</h2>
             {% if resolved_alerts %}
                 {% for alert in resolved_alerts %}
                     <div class="alert resolved">
@@ -136,7 +139,6 @@ button:hover {
             {% else %}
                 <p>No resolved alerts</p>
             {% endif %}
-
         </div>
 
     </div>

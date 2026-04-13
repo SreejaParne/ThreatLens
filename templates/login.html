@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - ThreatLens</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial;
+            color: white;
+            background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        /* 🌌 CYBER GRID */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image:
+                linear-gradient(rgba(56,189,248,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56,189,248,0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(56,189,248,0.15), transparent 70%);
+        }
+
+        @keyframes moveGrid {
+            from { transform: translate(0,0); }
+            to { transform: translate(-40px,-40px); }
+        }
+
+        .project-title {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+            z-index: 1;
+        }
+
+        .project-title h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #38bdf8;
+            margin: 0;
+        }
+
+        .project-title p {
+            font-size: 12px;
+            margin: 0;
+            color: #94a3b8;
+        }
+
+        .logo {
+            width: 35px;
+            filter: drop-shadow(0 0 6px #38bdf8);
+        }
+
+        @keyframes fadeIn {
+            from {opacity:0; transform: translateY(-20px);}
+            to {opacity:1; transform: translateY(0);}
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+
+        input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #22c55e;
+            border: none;
+            border-radius: 6px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #16a34a;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 2;
+            animation: fadein 0.5s, fadeout 0.5s 3s;
+        }
+
+        .success { background:#22c55e; color:black; }
+        .error { background:#ef4444; }
+
+        @keyframes fadein {
+            from {opacity:0; right:0;}
+            to {opacity:1; right:20px;}
+        }
+
+        @keyframes fadeout {
+            from {opacity:1;}
+            to {opacity:0;}
+        }
+    </style>
+</head>
+
+<body>
+
+{% if success %}<div class="toast success">{{ success }}</div>{% endif %}
+{% if error %}<div class="toast error">{{ error }}</div>{% endif %}
+
+<div class="project-title">
+    <h1>Cyber-Attack Progression Visualization</h1>
+</div>
+
+<div class="card">
+    <h2>Login</h2>
+
+    <form method="POST">
+        <input name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <label style="text-align:left; display:block;">
+            <input type="checkbox" name="remember"> Remember Me
+        </label>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p><a href="/forgot_password">Forgot Password?</a></p>
+    <p>New user? <a href="/register">Register</a></p>
+</div>
+
+</body>
+</html>

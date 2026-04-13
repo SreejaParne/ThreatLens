@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Statistics | ThreatLens</title>
+
+<!-- Auto refresh every 5 seconds -->
+<meta http-equiv="refresh" content="5">
+
+<style>
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: #020617;
+    color: #e5e7eb;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #22c55e;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #0f172a;
+    padding: 20px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #38bdf8;
+}
+
+.card p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.charts {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.chart-box {
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.8);
+}
+
+.chart-box img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.back {
+    margin-top: 40px;
+}
+
+.back a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h2>📊 Attack Statistics (Last 15 Seconds)</h2>
+
+<div class="cards">
+    <div class="card">
+        <h3>Live Window</h3>
+        <p>15 Seconds</p>
+    </div>
+
+    <div class="card">
+        <h3>Data Source</h3>
+        <p>System Logs</p>
+    </div>
+
+    <div class="card">
+        <h3>Mode</h3>
+        <p>Real-Time Monitoring</p>
+    </div>
+</div>
+
+<div class="charts">
+    <div class="chart-box">
+        <img src="{{ url_for('static', filename='attack_graph.png') }}?v={{ range(1,100000)|random }}">
+    </div>
+
+    <div class="chart-box">
+        <img src="{{ url_for('static', filename='attack_pie.png') }}?v={{ range(1,100000)|random }}">
+    </div>
+</div>
+
+<div class="back">
+    <a href="/">← Back to Dashboard</a>
+</div>
+
+</body>
+</html>

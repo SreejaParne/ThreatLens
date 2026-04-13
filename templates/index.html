@@ -37,6 +37,44 @@ body {
 .main {
     margin-left: 220px;
     padding: 30px;
+    position: relative;
+}
+
+/* 👤 PROFILE ICON */
+.profile-box {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.profile-box img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #1e293b;
+    border-radius: 10px;
+    width: 180px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background-color: #334155;
 }
 
 .header {
@@ -68,53 +106,24 @@ body {
     margin: 10px 0 0;
 }
 
-/* 🔵 Total Logs */
-.card.logs {
-    background-color: #0c4a6e;
-}
-.card.logs h3 {
-    color: #bae6fd;
-}
+/* Colors */
+.card.logs { background-color: #0c4a6e; }
+.card.logs h3 { color: #bae6fd; }
 
-/* 🟣 Security Events */
-.card.events {
-    background-color: #581c87;
-}
-.card.events h3 {
-    color: #e9d5ff;
-}
+.card.events { background-color: #581c87; }
+.card.events h3 { color: #e9d5ff; }
 
-/* 🔴 Active Alerts */
-.card.active {
-    background-color: #7f1d1d;
-}
-.card.active h3 {
-    color: #fecaca;
-}
+.card.active { background-color: #7f1d1d; }
+.card.active h3 { color: #fecaca; }
 
-/* 🟠 Acknowledged Alerts */
-.card.ack {
-    background-color: #78350f;
-}
-.card.ack h3 {
-    color: #fed7aa;
-}
+.card.ack { background-color: #78350f; }
+.card.ack h3 { color: #fed7aa; }
 
-/* 🟢 Resolved Alerts */
-.card.resolved {
-    background-color: #14532d;
-}
-.card.resolved h3 {
-    color: #bbf7d0;
-}
+.card.resolved { background-color: #14532d; }
+.card.resolved h3 { color: #bbf7d0; }
 
-/* 🔥 Blocked IPs */
-.card.blocked {
-    background-color: #3f1d1d;
-}
-.card.blocked h3 {
-    color: #fca5a5;
-}
+.card.blocked { background-color: #3f1d1d; }
+.card.blocked h3 { color: #fca5a5; }
 
 .footer {
     margin-top: 40px;
@@ -135,11 +144,27 @@ body {
     <a href="/stats">📊 Statistics</a>
     <a href="/reports">📁 Reports</a>
 
+    {% if role == "admin" %}
+        <a href="/admin/users">👑 Manage Users</a>
+    {% endif %}
 </div>
 
 <div class="main">
 
-    <div class="header">🔎 ThreatLens — Security Dashboard</div>
+    <!-- 👤 PROFILE ICON -->
+    <div class="profile-box">
+        <img src="{{ session.get('profile_pic', url_for('static', filename='default.png')) }}" onclick="toggleMenu()">
+
+        <div id="menu" class="dropdown">
+            <a href="/profile">👤 Profile</a>
+            <a href="/edit_profile">✏️ Edit Profile</a>
+            <a href="/logout" style="color:red;">🚪 Logout</a>
+        </div>
+    </div>
+
+    <div class="header">
+        🔎 CYBER-ATTACK PROGRESSION VISUALIZATION FROM REAL-TIME SYSTEM LOGS
+    </div>
 
     <div class="cards">
 
@@ -168,7 +193,6 @@ body {
             <p>{{ event_count }}</p>
         </div>
 
-        <!-- 🔥 NEW BLOCKED IPS CARD -->
         <div class="card blocked">
             <h3>⛔ Blocked IPs</h3>
             <p>{{ blocked_count }}</p>
@@ -181,6 +205,13 @@ body {
     </div>
 
 </div>
+
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
 
 </body>
 </html>

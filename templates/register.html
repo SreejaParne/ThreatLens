@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - ThreatLens</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial;
+            color: white;
+            background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image:
+                linear-gradient(rgba(56,189,248,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56,189,248,0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(56,189,248,0.15), transparent 70%);
+        }
+
+        @keyframes moveGrid {
+            from { transform: translate(0,0); }
+            to { transform: translate(-40px,-40px); }
+        }
+
+        .project-title {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+            z-index: 1;
+        }
+
+        .project-title h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #38bdf8;
+            margin: 0;
+        }
+
+        .project-title p {
+            font-size: 12px;
+            margin: 0;
+            color: #94a3b8;
+        }
+
+        .logo {
+            width: 35px;
+            filter: drop-shadow(0 0 6px #38bdf8);
+        }
+
+        @keyframes fadeIn {
+            from {opacity:0; transform: translateY(-20px);}
+            to {opacity:1; transform: translateY(0);}
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+
+        input, select {
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #38bdf8;
+            border: none;
+            border-radius: 6px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0ea5e9;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ef4444;
+            padding: 12px;
+            border-radius: 8px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+{% if error %}<div class="toast">{{ error }}</div>{% endif %}
+
+<div class="project-title">
+    <h1>Cyber-Attack Progression Visualization</h1>
+</div>
+
+<div class="card">
+    <h2>Register</h2>
+
+    <form method="POST">
+        <input name="full_name" placeholder="Full Name" required>
+        <input name="organisation" placeholder="Organisation" required>
+        <input name="designation" placeholder="Designation" required>
+
+        <input type="email" name="email" placeholder="Email" required>
+        <input name="mobile" pattern="[0-9]{10}" placeholder="Mobile (10 digits)" required>
+
+        <select name="role" required>
+            <option value="">Select Role</option>
+            <option value="admin">Administrator</option>
+            <option value="analyst">Analyst</option>
+            <option value="user">User</option>
+        </select>
+
+        <input name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have account? <a href="/login">Login</a></p>
+</div>
+
+</body>
+</html>
